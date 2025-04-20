@@ -237,8 +237,8 @@
     var notes = [];
     var noteNames = [];
 
-    var saveButton;
-    var table;
+    var saveButton = document.getElementById("savebutton");
+    var table = document.getElementById("table");
     var textarea = document.getElementById("textarea");
 
     function JavaSScript() {
@@ -252,8 +252,7 @@
       } else {
         noteNames = [];
       }
-      saveButton = document.getElementById("savebutton");
-      table = document.getElementById("table");
+      
       if (localStorage.getItem("tablehtml")) {
         table.innerHTML = localStorage.getItem("tablehtml");
       } else {
@@ -319,7 +318,7 @@
       }
       textarea.readOnly = false;
       textarea.placeholder = noteNames[n];
-      if (notes[n] !== undefined) {
+      if (notes[n]) {
         textarea.value = notes[n];
       }
       /*table.style.pointerEvents = "none";
